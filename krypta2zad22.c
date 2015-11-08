@@ -209,6 +209,7 @@ int main(int argc, char *argv[])
    
     }
 	else {  char * wynik;
+                      
 	     wynik=decrypt2(konf, "komiksyeee", "danemisasa");
 		 printf("dd %s", wynik);
 		char *  path1;
@@ -225,34 +226,45 @@ int main(int argc, char *argv[])
 		  char* haslo;
 	       printf("dd 7%s7  7%s7   7%s7  7%s7", path1, ide1, keys1, vector1);
                printf("\n");
+             
 	      haslo=getpass("haslo podaj ");
          if( !strncmp(haslo,"4444",100)==0 ) {printf("Złe hasło"); return 0;}
+            char* szyfrek;
+		char*  wektor;
+           char line[4096];
+            sprintf(line,"./krr.exe nie %s %s %s %s", argv[1], argv[2], path1, ide1);
+           system(line);
+            
+	/*        //  szyfrek=szukajklucza("keystore2.txt","mis","smutekizal", "smierctutu",0);
+         // wektor=szukajklucza("keystore2.txt","mis","smutekizal", "smierctutu",1);
              
 
-		char* szyfrek;
-		char*  wektor;
-	 
+		
 			char * key2="smutekizal";
 		char * iv2="smierctutu";
        
-	// szyfrek=szukajklucza(path1,ide1,keys1, vector1,0);
-	// wektor=szukajklucza(path1,ide1,keys1, vector1,1);
-         szyfrek=szukajklucza("keystore2.txt","mis","smutekizal", "smierctutu",0);
-          wektor=szukajklucza("keystore2.txt","mis","smutekizal", "smierctutu",1);
+	 szyfrek=szukajklucza(path1,ide1,keys1, vector1,0);
+	 wektor=szukajklucza(path1,ide1,keys1, vector1,1);
+         
 	printf(" ff %s  jjj  %s ",szyfrek, wektor);
 	
+          szyfrek=szukajklucza(path1,ide1,keys1, vector1,0);
+	 wektor=szukajklucza(path1,ide1,keys1, vector1,1);
+
+
+
     fIN = fopen(argv[1], "rb");
     if(fIN==NULL ) {printf("Plik błedny2"); return 0;}
     fOUT = fopen(argv[2], "wb");
 	
-			encrypt(fIN, fOUT, szyfrek, wektor);
+			encrypt(fIN, fOUT, "gdzielas", "pasmigas");
 			
 			
     fclose(fIN);
     fclose(fOUT);		
 			
-  return 0;
-		 
+     */
+	return 0;	 
 	
 	}
 
